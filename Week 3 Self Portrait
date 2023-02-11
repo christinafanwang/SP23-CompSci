@@ -1,0 +1,63 @@
+import js
+p5 = js.window
+
+def setup():
+    p5.createCanvas(300, 300)    # 300 x 300 pixel canvas 
+
+def draw():
+    p5.background(p5.random(255,0,255))        #random bg
+    p5.text(str(p5.mouseX) + ", " + str(p5.mouseY), 10, 20)
+    draw_backhair()
+    draw_face()
+    draw_eyes(125,135)
+    draw_eyes(175,135)
+    draw_neck()
+    draw_ear(85,150)
+    draw_ear(215,150)
+    p5.fill(139,69,0)
+    draw_hair(150,25,0.6)
+    draw_clothes()
+    p5.fill(250, 100, 255)
+    p5.arc(150,160,15,25,0,p5.PI)
+
+def draw_face():
+    p5.noStroke()
+    p5.fill(255,239,219) #face color
+    p5.ellipse(150,150,125,150) #ellipse at (150,150)
+
+def draw_eyes(x,y):
+    p5.push()
+    p5.translate(x,y)
+    p5.stroke(5)
+    p5.fill(255)
+    p5.ellipse(0,0,35,25)
+    p5.noStroke()
+    p5.fill(139,69,0)
+    p5.ellipse(0,0,5+p5.mouseX/20,5+p5.mouseY/20)
+    p5.pop()
+
+def draw_backhair():
+    p5.noStroke()
+    p5.fill(139,69,0)
+    p5.ellipse(150,150,145,165) #hair color
+    p5.rect(80,150,145,200)
+    
+def draw_hair(x,y,z):
+    p5.push()
+    p5.rotate(z)
+    p5.ellipse(x,y,50,100)
+    p5.pop()
+
+def draw_ear(x,y):
+    p5.push()
+    p5.translate(x,y)
+    p5.ellipse(0,0,35,55)
+    p5.pop()
+
+def draw_neck():
+    p5.rect(125,200,50,50)
+
+def draw_clothes():
+    p5.fill(250, 200, 255)
+    p5.ellipse(150,325,200,175)
+

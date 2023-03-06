@@ -47,6 +47,9 @@ def mousePressed(event):
         program_timer = p5.millis() # update program timer
         print('change program_state to ' + program_state)
 
+def mouseReleased(event):
+    pass
+
 def keyPressed(event):
     print('keyPressed.. ' + str(p5.key))
     global program_state
@@ -60,6 +63,8 @@ def keyPressed(event):
         program_state = 'state1'
         print(program_state)
 
+def keyReleased(event):
+    pass
 
 def draw_tree():
     p5.noStroke()

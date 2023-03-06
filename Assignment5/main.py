@@ -7,8 +7,8 @@ program_timer = p5.millis()
 def setup():
     p5.createCanvas(300, 300) # 300 x 300 pixel canvas
     print('finished setup')
-    p5.mousePressed(mousePressed)
-    p5.keyPressed(keyPressed)
+    #p5.mousePressed(mousePressed)
+    #p5.keyPressed(keyPressed)
 
 def draw():
     global program_state

@@ -59,9 +59,9 @@ def setup():
     print('finished setup') 
 
 player = Player()    
-ib_1 = Big(p5.random(1,300),0,0.75)
-ib_2 = Medium(p5.random(1,300),0,1.5)
-ib_3 = Small(p5.random(1,300),0,2)
+ib_1 = Big(p5.random(1,255),0,0.75)
+ib_2 = Medium(p5.random(1,255),0,1.5)
+ib_3 = Small(p5.random(1,255),0,2)
 background = Background()
 
 def draw():
@@ -69,6 +69,7 @@ def draw():
     p5.background(255) 
     background.draw()
     if (program_state == 'start'):
+        p5.fill(255)
         p5.textFont(font)
         p5.textSize(20)
         p5.text('ARCTIC VOYAGE', 25, 115)
@@ -105,7 +106,7 @@ def draw():
 
         program_state = 'gameover'
         
-        p5.fill(0)
+        p5.fill(255)
         p5.textFont(font)
         p5.textSize(20)
         p5.text("TRY AGAIN",50,100)
